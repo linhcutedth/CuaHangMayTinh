@@ -1,0 +1,54 @@
+﻿@model Test.Models.Congketnoi
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Congketnoi</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conggiaotiep)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conggiaotiep)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ketnoikhongday)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ketnoikhongday)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Khedocthenho)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Khedocthenho)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Webcam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Webcam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tinhnangkhac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tinhnangkhac)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Denbanphim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Denbanphim)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Mackn">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

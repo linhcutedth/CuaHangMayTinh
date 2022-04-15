@@ -1,0 +1,257 @@
+﻿@model Test.Models.Sanpham
+
+@{ ViewData["Title"] = "Details";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+                var sanpham = ViewData["SanPham"] as Sanpham;
+                var bxl = ViewData["BXL"] as Boxuly;
+                var ram = ViewData["RAM"] as Bonhoram;
+                var mh = ViewData["MH"] as Manhinh;
+                var ckn = ViewData["CKN"] as Congketnoi; }
+
+<h1>Chi tiết</h1>
+
+<div>
+    <h4>Sản phẩm</h4>
+    <hr />
+
+
+
+    <div class="p-4">
+        <div class="container">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Thông tin sản phẩm</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Tên sản phẩm</th>
+                        <td>@sanpham.Tensp</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Đơn giá</th>
+                        <td>@sanpham.Dongia?.ToString("#,##0 VNĐ")</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Số lượng</th>
+                        <td>@sanpham.Soluong</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Màu sắc</th>
+                        <td>@sanpham.Mausac</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Bộ xử lý</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Công nghệ CPU</th>
+                        <td>@bxl.Congnghecpu</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Số nhân</th>
+                        <td>@bxl.Sonhan</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Số luồng</th>
+                        <td>@bxl.Soluong</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tốc độ CPU</th>
+                        <td>@bxl.Tocdocpu</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tốc độ tối đa</th>
+                        <td>@bxl.Tocdotoida</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Bộ nhớ đệm</th>
+                        <td>@bxl.Bonhodem</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Bộ nhớ RAM, Ổ cứng</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">RAM</th>
+                        <td>@ram.Dungluongram</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Loại RAM</th>
+                        <td>@ram.Loairam</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tốc độ Bus RAM</th>
+                        <td>@ram.Busram</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hỗ trợ RAM tối đa</th>
+                        <td>@ram.Hotrotoida</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ổ cứng</th>
+                        <td>@sanpham.Ocung</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Màn hình</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Màn hình</th>
+                        <td>@mh.Kichthuoc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Độ phân giải</th>
+                        <td>@mh.Dophangiai</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tần số quét</th>
+                        <td>@mh.Tansoquet</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cộng nghệ màn hình</th>
+                        <td>@mh.Congnghemh</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cảm ứng</th>
+                        <td>@mh.Camung</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Đồ họa và Âm thanh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Card màn hình</th>
+                        <td>@sanpham.Cardmanhinh</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Cổng kết nối & tính năng mở rộng</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Cổng giao tiếp</th>
+                        <td>@ckn.Conggiaotiep</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Kết nối không dây</th>
+                        <td>@ckn.Ketnoikhongday</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Webcam</th>
+                        <td>@ckn.Webcam</td>
+                    </tr>
+                    @if (ckn.Tinhnangkhac != "")
+                    {
+        <tr>
+            <th scope="row">Tính năng khác</th>
+            <td>@ckn.Tinhnangkhac</td>
+        </tr>
+}
+                    @if (ckn.Khedocthenho != "")
+                    {
+
+        <tr>
+            <th scope="row">Khe đọc thẻ nhớ</th>
+            <td>@ckn.Khedocthenho</td>
+        </tr>
+}
+                    <tr>
+                        <th scope="row">Đèn bàn phím</th>
+                        <td>@ckn.Denbanphim</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Kích thước & trọng lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Kích thước,trọng lượng</th>
+                        <td>@sanpham.KichthuocTrongluong</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Chất liệu</th>
+                        <td>@sanpham.Thietke</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="2">Thông tin khác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Đặc biệt</th>
+                        <td>@sanpham.Dacbiet</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Thông tin Pin</th>
+                        <td>@sanpham.Pin</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hệ điều hành</th>
+                        <td>@sanpham.Hdh</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Thời điểm ra mắt</th>
+                        <td>@sanpham.Ramat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hình ảnh</th>
+                        <td><img src="@sanpham.Hinhanh" width="150px" height="100px" /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Masp" class="btn btn-success">Cập nhật</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a asp-action="Index">Trở về trang danh sách</a>
+<style>
+    .table tbody th {
+        width: 350px
+    }
+</style>

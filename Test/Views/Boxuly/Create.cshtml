@@ -1,0 +1,63 @@
+﻿@model Test.Models.Boxuly
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Boxuly</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Mabxl" class="control-label"></label>
+                <input asp-for="Mabxl" class="form-control" />
+                <span asp-validation-for="Mabxl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Congnghecpu" class="control-label"></label>
+                <input asp-for="Congnghecpu" class="form-control" />
+                <span asp-validation-for="Congnghecpu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sonhan" class="control-label"></label>
+                <input asp-for="Sonhan" class="form-control" />
+                <span asp-validation-for="Sonhan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soluong" class="control-label"></label>
+                <input asp-for="Soluong" class="form-control" />
+                <span asp-validation-for="Soluong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tocdocpu" class="control-label"></label>
+                <input asp-for="Tocdocpu" class="form-control" />
+                <span asp-validation-for="Tocdocpu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tocdotoida" class="control-label"></label>
+                <input asp-for="Tocdotoida" class="form-control" />
+                <span asp-validation-for="Tocdotoida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bonhodem" class="control-label"></label>
+                <input asp-for="Bonhodem" class="form-control" />
+                <span asp-validation-for="Bonhodem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

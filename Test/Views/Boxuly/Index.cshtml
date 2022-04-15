@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Test.Models.Boxuly>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Congnghecpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sonhan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soluong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tocdocpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tocdotoida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bonhodem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Congnghecpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sonhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tocdocpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tocdotoida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bonhodem)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Mabxl">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Mabxl">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Mabxl">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
